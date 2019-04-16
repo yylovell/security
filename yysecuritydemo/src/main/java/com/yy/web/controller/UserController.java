@@ -43,16 +43,16 @@ import io.swagger.annotations.ApiParam;
 @RequestMapping("/user")
 public class UserController {
 	
-	@Autowired
-	private ProviderSignInUtils providerSignInUtils;
+//	@Autowired
+//	private ProviderSignInUtils providerSignInUtils;
 	
-	@PostMapping("/regist")
-	public void regist(User user, HttpServletRequest request) {
-		
-		//不管是注册用户还是绑定用户，都会拿到一个用户唯一标识。
-		String userId = user.getUsername();
-		providerSignInUtils.doPostSignUp(userId, new ServletWebRequest(request));
-	}
+//	@PostMapping("/regist")
+//	public void regist(User user, HttpServletRequest request) {
+//
+//		//不管是注册用户还是绑定用户，都会拿到一个用户唯一标识。
+//		String userId = user.getUsername();
+//		providerSignInUtils.doPostSignUp(userId, new ServletWebRequest(request));
+//	}
 	
 	@GetMapping("/me")
 	public Object getCurrentUser(@AuthenticationPrincipal UserDetails user) {
